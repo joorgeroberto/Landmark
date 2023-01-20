@@ -10,6 +10,9 @@ import Combine
 
 final class ModelData: ObservableObject {
     @Published var landmarks: [Landmark] = load("landmarkData.json")
+    // Because you’ll never modify hike data after initially loading it,
+    // you don’t need to mark it with the @Published attribute.
+    var hikes: [Hike] = load("hikeData.json")
 }
 
 func load<T: Decodable>(_ filename: String) -> T {
