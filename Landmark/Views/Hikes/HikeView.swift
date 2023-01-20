@@ -1,9 +1,9 @@
 /*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A view displaying information about a hike, including an elevation graph.
-*/
+ See LICENSE folder for this sample’s licensing information.
+ 
+ Abstract:
+ A view displaying information about a hike, including an elevation graph.
+ */
 
 import SwiftUI
 
@@ -26,7 +26,9 @@ struct HikeView: View {
                 Spacer()
 
                 Button {
-                    showDetail.toggle()
+                    withAnimation {
+                        showDetail.toggle()
+                    }
                 } label: {
                     Label("Graph", systemImage: "chevron.right.circle")
                         .labelStyle(.iconOnly)
